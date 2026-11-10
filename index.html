@@ -1,19 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的网站</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f4d5e8">
+  <meta name="description" content="一份只属于你的电子日记">
+  <title>给你的日记</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div id="intro" class="intro">
+    <div class="intro-card">
+      <div class="sparkle">✦</div>
+      <p class="intro-small">这是给你的东西</p>
+      <h1>一页一页地看吧。</h1>
+      <button id="openDiary" class="primary-btn">打开日记</button>
+    </div>
+  </div>
 
-    <h1>欢迎来到我的网站</h1>
+  <header class="topbar">
+    <div class="brand">♡ 日记</div>
+    <button id="musicBtn" class="icon-btn" aria-label="播放音乐">♫</button>
+  </header>
 
-    <p>这是我的个人网站。</p>
+  <main id="diary" class="diary"></main>
 
-    <a href="https://github.com/">我的 GitHub</a>
+  <section class="ending">
+    <div class="ending-line"></div>
+    <p class="ending-small">你已经看到最后了。</p>
+    <button id="secretBtn" class="secret-btn">还有一个东西 ···</button>
+    <div id="secret" class="secret-content" aria-hidden="true">
+      <div class="secret-heart">♡</div>
+      <h2>写到这里，刚刚好。</h2>
+      <p>希望以后，还能一起留下很多很多这样的日子。</p>
+      <p class="tiny">—— 送给特别的你</p>
+    </div>
+  </section>
 
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="closeLightbox" class="close-btn" aria-label="关闭">×</button>
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <audio id="bgm" loop preload="none">
+    <!-- 把你的音乐放进 assets/music.mp3 后即可使用 -->
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
